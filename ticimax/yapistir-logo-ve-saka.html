@@ -1,0 +1,186 @@
+<!-- ACARRAF Logo Animasyonu: Ticimax > Modüller > Script Yönetimi > Tüm Sayfalar (mevcut kodların ALTINA ekleyin) -->
+<style>
+  .acr-logo-katman { position: absolute; pointer-events: none;
+    --acr-a: url(data:image/png;base64,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);
+    --acr-r: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAB4CAMAAAAdSNE9AAAASFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACrhKybAAAAGHRSTlMA/k+SatItsQAAAAAAAAAAAAAAAAAAAACWO72/AAAD6UlEQVR42u3dW3PjIAyG4QBC+v//eLttp0m6PoCPEvt+N73oNJnhKQZjZB4P4iyaS01vqVYy7XKpgRSrNdVaTQ5uerE0GaHVj+MrE3lp4PxukI/85jQXgI9Lnmzhn9/+un4eCDzPC/D5wDqHcBSwpATw7cA1nQVsCeDbgXXC9xjgyU8G+ErgPN1/DwJe8wX4CuCazgJe9QX4dGCZm+Tq6eMvwJcAazoLWBLA9wOXehawJoAdAM9mN7ABPDRwUwdOPG0IC2wADw3c1oEBDgtcAB4beHmNo1oxswpwWOCFK3SV50crLEGBZxc5Kn3WCfA5Q7DhMAbwzE1ShWEQYCbN/oBrkaxfyVLKGXMsOvBtwK9T2wOirDz7Aj665fW0Z8xkA3DVi74L4FuA7bLvAuEO4PoAeGhgBXho4PIAeGjgDDDAAA8O/Hdx6yMfPwAeDPizJvx3Wf4Mszwz8zBJ3sPK9L3AudjssvXEX2nqDUvTNwJrWSks+scY4EDAuWXTq2WAPUWagXNtFDIFOCCwdRgJwNGAOzd+GMCxgEu3kgIcCNhSfxTgMMA1pc3CAPsH3ub7DQWwe2BLG2MARwCWtDkCsH9gTTsCsH9g2wNcAPYOnNOuKMDOgetSubZIzrL4fEkeWp+Z+6D3UGp4IfB8/ysv9drS2BvZ0eEOuDRWPVhTwTjA7oBr6zBpqWH7LcDegDveWNlSAAOwN+DcXraUG/o6wN6AS8d+nrre2QEOAjz5QQ3/DADfkMVNd9YhkteLyAH2Bixl5dislyjA8YC7sn6fBDDAxC9wBRhggAEmAJMrgL/Kv1/qeplkjQKcf5d/r+zaATgQcLbOXdIABwLOG3bgARwFWEvaEoBjAG/kBTgI8FZegEMAa00ADwy8a/M7wO6BJQE8MvA+X4C9A+8sTgLYObAmgIcGXp4/m71s1QI4IPDCAGy/z1TicWFA4LbXFQIcFVga3lUIsHfhySyPwB21KwA7jvb4Ahwv0l5cCHDEWHN1MMAh09WBAR5lCBaAx76DUoDHnmM9AAYY4AgpAP+XwNo1YgMc7hItPfdUAMcDrh0XaIAD3iZNdeH5jbUAh1vomHjYsLQvAGC/qW2Pgxdr0gB2nHm45xGjKivbtgCONwh/v/D9I+s1LQB7TtqfCnC8pQ6Ah59HdwTgwbswwIOPwgpw2Il0UzLAY1+kC8BRVzu6p9EAhxbOqwcAABxZWNaP5QA48DicG/Z0AOx2Lr225vx1luHanTDAfiMrl+ela7kAHCAL7zL8OWl27Xg7nTylp9C4XnrxVA+tr29yqB2buIjLwfj9vG8rmTYZ72Ktny/yz6q0BSHkwPwBcZIw0I9O/RcAAAAASUVORK5CYII=); }
+  .acr-logo-katman > i { position: absolute; inset: 0; background-size: 100% 100%; background-repeat: no-repeat; }
+  .acr-logo-katman .acr-raf  { background-image: var(--acr-r);
+                               transform-origin: 50% 100%;
+                               animation: acr-raf-gir 1.2s .75s ease-out backwards, acr-raf-zipla 4.5s 2.4s ease-in-out infinite; }
+  .acr-logo-katman .acr-acar { background-image: var(--acr-a);
+                               transform-origin: 50% 100%;
+                               animation: acr-acar-gir 1.1s cubic-bezier(.2,.9,.3,1) backwards, acr-acar-sars 4.5s 2.4s ease-in-out infinite; }
+  .acr-logo-katman .acr-parilti {
+    background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,.95) 50%, transparent 58%) no-repeat;
+    background-size: 400% 100%; background-position: 150% 0;
+    -webkit-mask-image: var(--acr-a), var(--acr-r);
+            mask-image: var(--acr-a), var(--acr-r);
+    -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+    animation: acr-parilti 4.5s 2.4s ease-in-out infinite; }
+  a:hover > .acr-logo-katman { transform: scale(1.06); }
+  .acr-logo-katman { transition: transform .25s; }
+  a:hover > .acr-logo-katman .acr-raf { animation: acr-raf-zipla-hizli .7s ease-in-out; }
+
+  @keyframes acr-acar-gir {
+    0%   { transform: translateX(-120%) scaleX(1.25); opacity: 0; }
+    55%  { transform: translateX(7%) scaleX(.92); opacity: 1; }
+    75%  { transform: translateX(-3%) scaleX(1.03); }
+    90%  { transform: translateX(1%); }
+    100% { transform: none; } }
+  @keyframes acr-raf-gir {
+    0%   { transform: translateY(-170%); opacity: 0; }
+    35%  { transform: translateY(0) scale(1.12, .72); opacity: 1; }
+    52%  { transform: translateY(-32%) scale(.94, 1.1); }
+    68%  { transform: translateY(0) scale(1.06, .86); }
+    80%  { transform: translateY(-9%) scale(.98, 1.03); }
+    90%  { transform: translateY(0) scale(1.02, .97); }
+    100% { transform: none; } }
+  @keyframes acr-raf-zipla {
+    0%, 66%, 100% { transform: none; }
+    71% { transform: translateY(3%) scale(1.1, .8); }
+    78% { transform: translateY(-42%) scale(.92, 1.12); }
+    85% { transform: translateY(0) scale(1.12, .78); }
+    90% { transform: translateY(-12%) scale(.98, 1.04); }
+    95% { transform: translateY(0) scale(1.03, .96); } }
+  @keyframes acr-acar-sars {
+    0%, 84%, 100% { transform: none; }
+    86% { transform: translateY(5%) rotate(-2.5deg); }
+    89% { transform: translateY(-3%) rotate(2deg); }
+    92% { transform: rotate(-1deg); }
+    95% { transform: none; } }
+  @keyframes acr-raf-zipla-hizli { 0%, 100% { transform: none; } 20% { transform: scale(1.1, .8); } 50% { transform: translateY(-38%) scale(.94, 1.1); } 75% { transform: translateY(0) scale(1.08, .85); } }
+  @keyframes acr-parilti { 0%, 20% { background-position: 150% 0; } 45%, 100% { background-position: -50% 0; } }
+
+  @media (prefers-reduced-motion: reduce) { .acr-logo-katman > i { animation: none !important; } .acr-logo-katman .acr-parilti { display: none; } }
+</style>
+<script>
+(function () {
+  function kur(img) {
+    if (img.getAttribute('data-acr-anim')) return;
+    var a = img.parentElement; if (!a) return;
+    img.setAttribute('data-acr-anim', '1');
+    if (getComputedStyle(a).position === 'static') a.style.position = 'relative';
+    var k = document.createElement('span');
+    k.className = 'acr-logo-katman';
+    k.innerHTML = '<i class="acr-raf"></i><i class="acr-acar"></i><i class="acr-parilti"></i>';
+    function yerlestir() {
+      if (!img.offsetWidth) return;
+      k.style.left = img.offsetLeft + 'px'; k.style.top = img.offsetTop + 'px';
+      k.style.width = img.offsetWidth + 'px'; k.style.height = img.offsetHeight + 'px';
+    }
+    a.appendChild(k); yerlestir();
+    img.style.opacity = '0';
+    img.addEventListener('load', yerlestir);
+    window.addEventListener('resize', yerlestir);
+    setTimeout(yerlestir, 600);
+  }
+  function basla() { var l = document.querySelectorAll('#hb-logo img.header-logo, img.header_logo'); for (var i = 0; i < l.length; i++) kur(l[i]); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', basla); else basla();
+})();
+</script>
+
+<!-- ACARRAF Şaka: Ana sayfada logoya tıklanınca "raf" devrilir. Logo animasyonu kodunun ALTINA ekleyin.
+     Diğer sayfalarda logo normal şekilde ana sayfaya götürür. -->
+<style>
+  .acr-devrik { position: fixed; z-index: 100000; pointer-events: none; background-size: 100% 100%; background-repeat: no-repeat; will-change: transform; }
+  .acr-bum { position: fixed; z-index: 100001; pointer-events: none; font: 900 34px/1 "Roboto", Arial, sans-serif; color: #e8711c;
+             text-shadow: 0 2px 0 #fff, 0 4px 12px rgba(0,0,0,.25); }
+  .acr-mesaj { position: fixed; z-index: 100002; background: #1d2023; color: #fff; font: 600 15px/1.35 "Roboto", Arial, sans-serif;
+               padding: 12px 18px; border-radius: 12px; border-left: 4px solid #e8711c; box-shadow: 0 10px 30px rgba(0,0,0,.25);
+               max-width: calc(100vw - 32px); }
+  .acr-mesaj::before { content: ""; position: absolute; top: -8px; left: var(--ok, 28px); border: 8px solid transparent; border-top: 0; border-bottom-color: #1d2023; }
+</style>
+<script>
+(function () {
+  function anaSayfadaMi() { return location.pathname === '/' || /^\/(default\.aspx|index\.html?)?$/i.test(location.pathname); }
+
+  var calisiyor = false;
+
+  function oyna(link) {
+    var raf = link.querySelector('.acr-logo-katman .acr-raf');
+    var acar = link.querySelector('.acr-logo-katman .acr-acar');
+    if (!raf || calisiyor) return;
+    calisiyor = true;
+
+    var r = raf.getBoundingClientRect();
+    var kopya = document.createElement('div');
+    kopya.className = 'acr-devrik';
+    kopya.style.cssText = 'left:' + r.left + 'px;top:' + r.top + 'px;width:' + r.width + 'px;height:' + r.height + 'px;background-image:' + getComputedStyle(raf).backgroundImage;
+    document.body.appendChild(kopya);
+    raf.style.visibility = 'hidden';
+
+    var dy = window.innerHeight - r.bottom - 6;      // ekranın altına kadar mesafe
+    var dx = window.innerWidth - r.left + 40;        // sağdan çıkış mesafesi
+
+    // 1) sallan, devril, düş, zıpla, yuvarlanıp çık
+    var dus = kopya.animate([
+      { transform: 'none', offset: 0 },
+      { transform: 'rotate(-9deg)', offset: .07 },
+      { transform: 'rotate(11deg)', offset: .14 },
+      { transform: 'rotate(-7deg)', offset: .21 },
+      { transform: 'translate(8px, 4px) rotate(48deg)', offset: .32, easing: 'cubic-bezier(.5,0,1,.6)' },
+      { transform: 'translate(36px,' + dy + 'px) rotate(180deg)', offset: .52, easing: 'cubic-bezier(0,.4,.5,1)' },
+      { transform: 'translate(70px,' + (dy - 70) + 'px) rotate(230deg)', offset: .60, easing: 'cubic-bezier(.5,0,1,.6)' },
+      { transform: 'translate(100px,' + dy + 'px) rotate(270deg)', offset: .68, easing: 'cubic-bezier(0,.4,.5,1)' },
+      { transform: 'translate(120px,' + (dy - 18) + 'px) rotate(290deg)', offset: .73 },
+      { transform: 'translate(140px,' + dy + 'px) rotate(310deg)', offset: .78, easing: 'ease-in' },
+      { transform: 'translate(' + dx + 'px,' + dy + 'px) rotate(1080deg)', offset: 1 }
+    ], { duration: 3400, fill: 'forwards' });
+
+    // "acar" irkilsin
+    if (acar) acar.animate([{ transform: 'none' }, { transform: 'translateY(-10%) rotate(-3deg)' }, { transform: 'rotate(2deg)' }, { transform: 'none' }],
+                           { duration: 500, delay: 900, easing: 'ease-out' });
+
+    // yere çarpınca BUM
+    setTimeout(function () {
+      var b = document.createElement('div'); b.className = 'acr-bum'; b.textContent = 'BUM!';
+      b.style.left = (r.left + 20) + 'px'; b.style.top = (window.innerHeight - 70) + 'px';
+      document.body.appendChild(b);
+      b.animate([{ transform: 'scale(.3)', opacity: 0 }, { transform: 'scale(1.3) rotate(-8deg)', opacity: 1, offset: .3 }, { transform: 'translateY(-30px) scale(1)', opacity: 0 }],
+                { duration: 900, easing: 'ease-out' }).onfinish = function () { b.remove(); };
+    }, 3400 * .52);
+
+    // 2) geri gel, yerine otur, mesaj ver
+    dus.onfinish = function () {
+      setTimeout(function () {
+        kopya.getAnimations().forEach(function (a) { a.cancel(); });
+        var geri = kopya.animate([
+          { transform: 'translateY(-' + (r.bottom + 60) + 'px)', offset: 0 },
+          { transform: 'translateY(0) scale(1.15,.7)', offset: .45, easing: 'ease-out' },
+          { transform: 'translateY(-30%) scale(.94,1.1)', offset: .62 },
+          { transform: 'translateY(0) scale(1.06,.88)', offset: .78 },
+          { transform: 'none', offset: 1 }
+        ], { duration: 1100, easing: 'ease-in' });
+        geri.onfinish = function () {
+          raf.style.visibility = ''; kopya.remove(); calisiyor = false;
+          mesaj(link);
+        };
+      }, 700);
+    };
+  }
+
+  function mesaj(link) {
+    var lr = link.getBoundingClientRect();
+    var m = document.createElement('div');
+    m.className = 'acr-mesaj';
+    m.textContent = 'Merak etme, bizim raflar bu kadar kolay devrilmez 😄';
+    m.style.top = (lr.bottom + 12) + 'px';
+    document.body.appendChild(m);
+    var sol = Math.max(16, Math.min(lr.left, window.innerWidth - m.offsetWidth - 16));   // ekrandan taşmasın
+    m.style.left = sol + 'px';
+    m.style.setProperty('--ok', Math.max(14, lr.left + 20 - sol) + 'px');
+    m.animate([{ opacity: 0, transform: 'translateY(-8px)' }, { opacity: 1, transform: 'none' }], { duration: 300, fill: 'forwards' });
+    setTimeout(function () {
+      m.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 400, fill: 'forwards' }).onfinish = function () { m.remove(); };
+    }, 4000);
+  }
+
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('#hb-logo a');
+    if (!link || !link.querySelector('.acr-logo-katman')) return;
+    if (!anaSayfadaMi()) return; // diğer sayfalarda logo normal çalışır
+    e.preventDefault();          // ana sayfada sayfayı yenilemek yerine şakayı oynatır
+    oyna(link);
+  }, true);
+})();
+</script>

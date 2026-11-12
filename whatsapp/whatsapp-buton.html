@@ -1,0 +1,51 @@
+<!-- ACARRAF WhatsApp Butonu: Ticimax panelinde sitenin altına (body sonuna) eklenecek özel kod -->
+<a class="acr-wa" href="https://wa.me/905376605348?text=Merhaba%2C%20acarraf.com%20%C3%BCzerinden%20yaz%C4%B1yorum.%20Bilgi%20almak%20istiyorum."
+   target="_blank" rel="noopener" aria-label="WhatsApp ile yazın">
+  <span class="acr-wa-dalga"></span>
+  <span class="acr-wa-dalga acr-wa-dalga2"></span>
+  <span class="acr-wa-ikon">
+    <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+      <path fill="#fff" d="M32 6C17.6 6 6 17.3 6 31.3c0 4.9 1.4 9.4 3.9 13.3L6.5 57.5l13.4-3.4A26.4 26.4 0 0 0 32 56.6c14.4 0 26-11.3 26-25.3S46.4 6 32 6z"/>
+      <path fill="#25d366" d="M32 10.6c-11.8 0-21.3 9.3-21.3 20.7 0 4.5 1.5 8.7 4 12.1l-2 7.3 7.6-2a21.6 21.6 0 0 0 11.7 3.4c11.8 0 21.3-9.3 21.3-20.8S43.8 10.6 32 10.6z"/>
+      <path fill="#fff" d="M24.6 20.4c-.5-1.1-1-1.1-1.5-1.1h-1.3c-.4 0-1.2.2-1.8.8-.6.7-2.3 2.2-2.3 5.4s2.4 6.3 2.7 6.7c.3.4 4.6 7.2 11.4 9.8 5.6 2.2 6.8 1.8 8 1.7 1.2-.1 4-1.6 4.5-3.2.6-1.6.6-2.9.4-3.2-.2-.3-.6-.5-1.3-.8l-4.4-2.1c-.6-.2-1-.3-1.5.3l-2 2.5c-.4.4-.7.5-1.4.2-.6-.3-2.7-1-5.2-3.2-1.9-1.7-3.2-3.8-3.6-4.4-.4-.6 0-1 .3-1.3l1-1.1c.3-.4.4-.6.6-1.1.2-.4.1-.8 0-1.1l-2-4.8z"/>
+    </svg>
+  </span>
+  <span class="acr-wa-balon">
+    <b>WhatsApp Destek</b>
+    <small>Hemen yazın, hızlı dönüş yapalım</small>
+  </span>
+</a>
+<style>
+  .acr-wa { position: fixed; right: 22px; bottom: 132px; z-index: 99999; display: flex; align-items: center;
+            flex-direction: row-reverse; gap: 12px; text-decoration: none !important; font-family: "Roboto", Arial, sans-serif; }
+  .acr-wa-ikon { position: relative; z-index: 2; width: 62px; height: 62px; border-radius: 50%; background: #25d366;
+                 display: grid; place-items: center; box-shadow: 0 8px 22px rgba(37, 211, 102, .45), 0 2px 6px rgba(0,0,0,.18);
+                 animation: acr-wa-zipla 3s ease-in-out infinite; transition: transform .2s; }
+  .acr-wa-ikon svg { animation: acr-wa-salla 3s ease-in-out infinite; }
+  .acr-wa-dalga { position: absolute; right: 0; bottom: 0; width: 62px; height: 62px; border-radius: 50%;
+                  background: #25d366; opacity: .5; animation: acr-wa-nabiz 2s ease-out infinite; }
+  .acr-wa-dalga2 { animation-delay: 1s; }
+  .acr-wa-balon { background: #fff; color: #1d2023; border-radius: 12px; padding: 10px 16px; line-height: 1.25;
+                  box-shadow: 0 6px 20px rgba(0,0,0,.15); border-left: 4px solid #25d366; white-space: nowrap;
+                  opacity: 0; transform: translateX(10px); pointer-events: none;
+                  animation: acr-wa-balon 9s ease-in-out 2s infinite; }
+  .acr-wa-balon b { display: block; font-size: 15px; }
+  .acr-wa-balon small { display: block; font-size: 12.5px; color: #5d6268; }
+  .acr-wa:hover .acr-wa-ikon { transform: scale(1.08); }
+  .acr-wa:hover .acr-wa-balon { opacity: 1; transform: none; animation: none; }
+
+  @keyframes acr-wa-nabiz { 0% { transform: scale(1); opacity: .5; } 100% { transform: scale(1.9); opacity: 0; } }
+  @keyframes acr-wa-zipla { 0%, 70%, 100% { transform: translateY(0); } 76% { transform: translateY(-8px); } 82% { transform: translateY(0); } 88% { transform: translateY(-4px); } 94% { transform: translateY(0); } }
+  @keyframes acr-wa-salla { 0%, 70%, 100% { transform: rotate(0); } 74% { transform: rotate(-14deg); } 78% { transform: rotate(12deg); } 82% { transform: rotate(-8deg); } 86% { transform: rotate(5deg); } 90% { transform: rotate(0); } }
+  @keyframes acr-wa-balon { 0%, 100% { opacity: 0; transform: translateX(10px); } 8%, 55% { opacity: 1; transform: none; } 63% { opacity: 0; transform: translateX(10px); } }
+
+  @media (max-width: 768px) {
+    .acr-wa { right: 14px; bottom: 110px; }
+    .acr-wa-ikon, .acr-wa-dalga { width: 56px; height: 56px; }
+    .acr-wa-balon { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .acr-wa-ikon, .acr-wa-ikon svg, .acr-wa-dalga, .acr-wa-balon { animation: none; }
+    .acr-wa-dalga { display: none; }
+  }
+</style>

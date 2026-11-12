@@ -1,5 +1,5 @@
-<!-- ACARRAF Şaka: Logoya tıklanınca "raf" devrilir. Logo animasyonu kodunun ALTINA ekleyin.
-     Şimdilik SADECE deneme modunda çalışır: acarraf.com/?troll=1 ile açın (kapatmak için ?troll=0). -->
+<!-- ACARRAF Şaka: Ana sayfada logoya tıklanınca "raf" devrilir. Logo animasyonu kodunun ALTINA ekleyin.
+     Diğer sayfalarda logo normal şekilde ana sayfaya götürür. -->
 <style>
   .acr-devrik { position: fixed; z-index: 100000; pointer-events: none; background-size: 100% 100%; background-repeat: no-repeat; will-change: transform; }
   .acr-bum { position: fixed; z-index: 100001; pointer-events: none; font: 900 34px/1 "Roboto", Arial, sans-serif; color: #e8711c;
@@ -11,12 +11,7 @@
 </style>
 <script>
 (function () {
-  try {
-    var q = location.search;
-    if (/[?&]troll=1/.test(q)) sessionStorage.setItem('acrTroll', '1');
-    if (/[?&]troll=0/.test(q)) sessionStorage.removeItem('acrTroll');
-    if (sessionStorage.getItem('acrTroll') !== '1') return;   // deneme modu kapalıysa hiçbir şey yapma
-  } catch (e) { return; }
+  function anaSayfadaMi() { return location.pathname === '/' || /^\/(default\.aspx|index\.html?)?$/i.test(location.pathname); }
 
   var calisiyor = false;
 
@@ -102,7 +97,8 @@
   document.addEventListener('click', function (e) {
     var link = e.target.closest && e.target.closest('#hb-logo a');
     if (!link || !link.querySelector('.acr-logo-katman')) return;
-    e.preventDefault();          // deneme modunda logo ana sayfaya gitmez, şakayı oynatır
+    if (!anaSayfadaMi()) return; // diğer sayfalarda logo normal çalışır
+    e.preventDefault();          // ana sayfada sayfayı yenilemek yerine şakayı oynatır
     oyna(link);
   }, true);
 })();

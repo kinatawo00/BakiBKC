@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acarraf Slider: Askılık ve Stand</title>
+<style>
+  /* ---------- Fontlar (yerel dosyalar) ---------- */
+  @font-face { font-family: "Oswald"; font-weight: 500 700; src: url(assets/fonts/oswald-latin-700-normal.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2013-2014, U+2018-201E, U+2022, U+2192; }
+  @font-face { font-family: "Oswald"; font-weight: 500 700; src: url(assets/fonts/oswald-latin-ext-700-normal.woff2) format("woff2"); unicode-range: U+0100-02AF, U+1E00-1EFF, U+20A0-20C0; }
+  @font-face { font-family: "Oswald"; font-weight: 500; src: url(assets/fonts/oswald-latin-500-normal.woff2) format("woff2"); unicode-range: U+0000-00FF; }
+  @font-face { font-family: "Oswald"; font-weight: 500; src: url(assets/fonts/oswald-latin-ext-500-normal.woff2) format("woff2"); unicode-range: U+0100-02AF; }
+  @font-face { font-family: "Montserrat"; font-weight: 400; src: url(assets/fonts/montserrat-latin-400-normal.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2192; }
+  @font-face { font-family: "Montserrat"; font-weight: 400; src: url(assets/fonts/montserrat-latin-ext-400-normal.woff2) format("woff2"); unicode-range: U+0100-02AF, U+20A0-20C0; }
+  @font-face { font-family: "Montserrat"; font-weight: 500; src: url(assets/fonts/montserrat-latin-500-normal.woff2) format("woff2"); unicode-range: U+0000-00FF; }
+  @font-face { font-family: "Montserrat"; font-weight: 500; src: url(assets/fonts/montserrat-latin-ext-500-normal.woff2) format("woff2"); unicode-range: U+0100-02AF; }
+  @font-face { font-family: "Montserrat"; font-weight: 600; src: url(assets/fonts/montserrat-latin-600-normal.woff2) format("woff2"); unicode-range: U+0000-00FF; }
+  @font-face { font-family: "Montserrat"; font-weight: 600; src: url(assets/fonts/montserrat-latin-ext-600-normal.woff2) format("woff2"); unicode-range: U+0100-02AF; }
+  @font-face { font-family: "Montserrat"; font-weight: 700; src: url(assets/fonts/montserrat-latin-700-normal.woff2) format("woff2"); unicode-range: U+0000-00FF; }
+  @font-face { font-family: "Montserrat"; font-weight: 700; src: url(assets/fonts/montserrat-latin-ext-700-normal.woff2) format("woff2"); unicode-range: U+0100-02AF; }
+
+  /* ---------- Marka renkleri ---------- */
+  :root {
+    --turuncu: #e8711c;   /* acarraf logosundaki turuncu ton */
+    --siyah: #141618;
+    --koyu: #1d2023;
+    --krem: #f4f1ec;
+    --yazi: #2a2d31;
+    --gri: #5d6268;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #d9d9d9; padding: 24px; font-family: "Montserrat", sans-serif; }
+
+  /* Ticimax slider görselleri 1672 × 941 (sitede 1180 × 664 gösteriliyor) */
+  .slide { position: relative; width: 1672px; height: 941px; overflow: hidden; background: var(--krem); color: var(--yazi); }
+
+  /* ---- Sağ taraf: ürün sahnesi ---- */
+  .sahne { position: absolute; left: 690px; top: 0; right: 0; bottom: 0;
+           background: linear-gradient(#e6e1de 0, #e4dfdc 570px, #d1ccc8 571px, #cdc8c4 100%); }
+  .urun { position: absolute; width: 400px; height: 600px; background-size: cover;
+          -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 16%, #000 84%, transparent 100%),
+                              linear-gradient(transparent 0, #000 12%, #000 86%, transparent 100%);
+          -webkit-mask-composite: source-in; mask-composite: intersect; }
+  /* zemin çizgileri 570px'te hizalanır: top = 570 − (çizgi/1800 × 600) */
+  .u1 { left: 90px; top: 207px; background-image: url(assets/urunler/beyaz-askilik.png); }
+  .u2 { left: 345px; top: 187px; background-image: url(assets/urunler/katlanir-krom-askilik.png); }
+  .u3 { left: 615px; top: 201px; background-image: url(assets/urunler/luks-ayarli-askilik.png); }
+  .golge { position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 45%, transparent 55%, rgba(40,30,25,.18) 100%); z-index: 3; }
+
+  /* kavisli ayraç */
+  .ayrac { position: absolute; left: 610px; top: 0; z-index: 4; }
+
+  /* ---- Sol panel ---- */
+  .sol { position: absolute; left: 130px; top: 74px; width: 600px; z-index: 5; }
+  .logo { display: flex; gap: 14px; font: 500 46px/1 "Montserrat", sans-serif; letter-spacing: 0; color: var(--siyah); margin-bottom: 56px; }
+  .logo span { position: relative; }
+  .logo .a::after { content: ""; position: absolute; left: 50%; bottom: 4px; width: 0; height: 0; transform: translateX(-50%);
+                    border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 10px solid var(--turuncu); }
+  .cizgi { width: 56px; height: 5px; background: var(--turuncu); margin-bottom: 26px; }
+  .ust { font: 600 26px/1.2 "Montserrat", sans-serif; letter-spacing: .02em; color: var(--siyah); margin-bottom: 14px; }
+  .ust b { color: var(--turuncu); font-weight: 700; }
+  h1 { font: 700 104px/0.98 "Oswald", sans-serif; text-transform: uppercase; color: var(--siyah); letter-spacing: -.005em; margin-bottom: 26px; }
+  h1 em { font-style: normal; color: var(--turuncu); }
+  .aciklama { font: 400 25px/1.45 "Montserrat", sans-serif; color: var(--yazi); margin-bottom: 40px; }
+  .aciklama b { font-weight: 700; color: var(--turuncu); }
+
+  .ozellikler { display: flex; margin-bottom: 44px; }
+  .oz { width: 132px; text-align: center; padding: 0 8px; }
+  .oz + .oz { border-left: 1.5px solid #cfcac3; }
+  .oz svg { width: 50px; height: 50px; margin-bottom: 12px; stroke: var(--siyah); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .oz svg .t { stroke: var(--turuncu); }
+  .oz p { font: 700 14px/1.3 "Montserrat", sans-serif; text-transform: uppercase; color: var(--siyah); letter-spacing: .02em; }
+
+  .buton { display: inline-flex; align-items: center; gap: 22px; background: var(--siyah); color: #fff;
+           font: 700 23px/1 "Montserrat", sans-serif; letter-spacing: .04em; padding: 22px 36px; border-radius: 999px; }
+  .buton svg { width: 34px; height: 20px; stroke: var(--turuncu); stroke-width: 2.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ---- Alt bant ---- */
+  .bant { position: absolute; left: 0; right: 0; bottom: 0; height: 112px; background: var(--koyu); border-top: 5px solid var(--turuncu);
+          display: flex; align-items: center; justify-content: space-around; z-index: 6; }
+  .bant .g { display: flex; align-items: center; gap: 20px; color: #fff; font: 500 22px/1.2 "Montserrat", sans-serif; text-transform: uppercase; letter-spacing: .03em; }
+  .bant .g + .g { border-left: 1.5px solid #4a4f55; padding-left: 70px; }
+  .bant svg { width: 48px; height: 48px; stroke: #fff; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+</style>
+</head>
+<body>
+
+<section class="slide" id="slide">
+  <div class="sahne">
+    <div class="urun u1"></div>
+    <div class="urun u2"></div>
+    <div class="urun u3"></div>
+    <div class="golge"></div>
+  </div>
+
+  <svg class="ayrac" width="260" height="941" viewBox="0 0 260 941">
+    <path d="M0 0 H150 C 60 250, 60 560, 170 941 H0 Z" fill="#f4f1ec"/>
+    <path d="M150 0 C 60 250, 60 560, 170 941" fill="none" stroke="#e8711c" stroke-width="4"/>
+    <path d="M178 0 C 92 250, 92 560, 200 941" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="2"/>
+  </svg>
+
+  <div class="sol">
+    <div class="logo"><span class="a">Λ</span><span>C</span><span class="a">Λ</span><span>R</span><span>R</span><span class="a">Λ</span><span>F</span></div>
+    <div class="cizgi"></div>
+    <p class="ust">MAĞAZA VE <b>KONFEKSİYON</b> İÇİN</p>
+    <h1>Elbise<br><em>Askılıkları</em></h1>
+    <p class="aciklama">Tekerlekli, katlanır ve yükseklik ayarlı<br>modellerle mağazanızda <b>esnek teşhir</b>.</p>
+
+    <div class="ozellikler">
+      <div class="oz">
+        <svg viewBox="0 0 48 48"><path d="M8 30h32"/><circle class="t" cx="14" cy="38" r="4"/><circle class="t" cx="34" cy="38" r="4"/><path d="M14 30V10M34 30V10M10 10h28"/></svg>
+        <p>Tekerlekli<br>Kolay Taşıma</p>
+      </div>
+      <div class="oz">
+        <svg viewBox="0 0 48 48"><path d="M24 6v36"/><path class="t" d="M17 13l7-7 7 7M17 35l7 7 7-7"/><path d="M12 24h24"/></svg>
+        <p>Yükseklik<br>Ayarlı</p>
+      </div>
+      <div class="oz">
+        <svg viewBox="0 0 48 48"><path d="M10 8h28M14 8l20 32M34 8L14 40"/><circle class="t" cx="24" cy="24" r="3"/></svg>
+        <p>Katlanır<br>Modeller</p>
+      </div>
+      <div class="oz">
+        <svg viewBox="0 0 48 48"><path d="M24 5l15 6v12c0 9-6.5 16.5-15 20-8.5-3.5-15-11-15-20V11z"/><path class="t" d="M17 24l5 5 9-10"/></svg>
+        <p>Sağlam Çelik<br>Gövde</p>
+      </div>
+    </div>
+
+    <span class="buton">ÜRÜNLERİ İNCELE <svg viewBox="0 0 34 20"><path d="M2 10h29M23 2l8 8-8 8"/></svg></span>
+  </div>
+
+  <div class="bant">
+    <div class="g"><svg viewBox="0 0 48 48"><path d="M4 12h26v20H4zM30 18h8l6 7v7H30"/><circle cx="12" cy="35" r="4"/><circle cx="36" cy="35" r="4"/></svg>Hızlı<br>Teslimat</div>
+    <div class="g"><svg viewBox="0 0 48 48"><path d="M24 5l15 6v12c0 9-6.5 16.5-15 20-8.5-3.5-15-11-15-20V11z"/><path d="M17 24l5 5 9-10"/></svg>Güvenli<br>Alışveriş</div>
+    <div class="g"><svg viewBox="0 0 48 48"><path d="M24 5l17 9v20l-17 9-17-9V14z"/><path d="M7 14l17 9 17-9M24 23v20"/></svg>Kolay<br>İade</div>
+    <div class="g"><svg viewBox="0 0 48 48"><path d="M24 4l5 4 6-1 2 6 5 3-2 6 2 6-5 3-2 6-6-1-5 4-5-4-6 1-2-6-5-3 2-6-2-6 5-3 2-6 6 1z"/><path d="M24 16l2.5 5 5.5.8-4 3.9 1 5.5-5-2.6-5 2.6 1-5.5-4-3.9 5.5-.8z"/></svg>Yerli<br>Üretim</div>
+  </div>
+</section>
+
+</body>
+</html>
